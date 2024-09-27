@@ -1,0 +1,8 @@
+skip WHITESPACE '\s+'
+token LEFTPAREN '\('
+token RIGHTPAREN '\)'
+token NUM '\d+'
+token SYMBOL '\w+'
+%
+<node>Leaf ::= NUM
+<node>Tree ::= LEFTPAREN SYMBOL <node>:leftNode <node>:rightNode RIGHTPAREN

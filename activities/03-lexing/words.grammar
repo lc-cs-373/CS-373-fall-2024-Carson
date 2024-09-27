@@ -1,3 +1,4 @@
 # Grammar file
-skip WS '\s+'
 token WORD '[a-zA-Z]+'
+skip WS '\s+'
+token NUMBER '\d+(\.\d+)?'
