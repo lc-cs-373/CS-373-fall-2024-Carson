@@ -1,0 +1,43 @@
+skip WHITESPACE '\s'
+token TOKEN '^token'
+token SKIP '^skip'
+token IDENTIFIER '[A-Z]+'
+token PATTERN ''.*''
+token COMMENT '#.*$'
+%
+<prog> ::= <exp>
+<exp>:NormalExp ::= <type> <IDENTIFIER>identifier <PATTERN>pattern
+<exp>:CommentExp ::= COMMENT
+<type>:SkipType ::= SKIP
+<type>:TokenType ::= <tok>
+<tok>:ExplicitToken ::= TOKEN
+<tok>:ImplicitToken ::= 
+%
+Prog
+%%%
+  public void $run() {
+    if(exp instanceof NormalExp) System.out.println(exp);
+  }
+%%%
+NormalExp
+%%%
+  public String toString(){
+    return type.toString() + " " + identifier.toString() + " " + pattern.toString();
+  }
+%%%
+Type
+%%%
+abstract public String toString();
+%%%
+SkipType
+%%%
+public String toString(){
+    return "skip";
+}
+%%%
+TokenType
+%%%
+public String toString(){
+    return "token";
+}
+%%%

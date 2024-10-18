@@ -30,7 +30,7 @@ VAR '[A-Za-z]\w*'
 <exp>:IfExp  ::= IF <exp>testExp THEN <exp>trueExp ELSE <exp>falseExp
 <exp>:PrimappExp ::= <prim> LPAREN <rands> RPAREN
 <exp>:LetExp ::= LET <letDecls> IN <exp>
-<letDecls>   **= <VAR> EQUALS <exp>
+<letDecls> **= <VAR> EQUALS <exp>
 <rands> **= <exp> +COMMA
 <prim>:AddPrim ::= ADDOP
 <prim>:SubPrim ::= SUBOP

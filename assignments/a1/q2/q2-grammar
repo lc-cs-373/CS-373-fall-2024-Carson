@@ -1,0 +1,6 @@
+skip WHITESPACE '\s'
+token TOKEN '^token'
+token SKIP '^skip'
+token IDENTIFIER '[A-Z]+'
+token PATTERN ''.*''
+COMMENT '#.*$'

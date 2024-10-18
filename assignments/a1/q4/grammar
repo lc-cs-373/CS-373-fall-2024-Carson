@@ -1,0 +1,7 @@
+skip WHITESPACE '\s+'
+token THING '\w+'
+token ME 'Carson'
+%
+<stuff> ::= THING
+<more> ::= ME <stuff>
+<many> ::= ME THING <more>m1 THING <more>m2 ME <more>m3

@@ -1,0 +1,12 @@
+skip WHITESPACE '\s'
+token TOKEN '^token'
+token SKIP '^skip'
+token IDENTIFIER '[A-Z]+'
+token PATTERN ''.*''
+token COMMENT '#.*$'
+%
+<grammar>:Normal ::= <type> IDENTIFIER PATTERN
+<grammar>:Comment ::= COMMENT
+<type>:Skip ::= SKIP
+<type>:ExplicitToken ::= TOKEN
+<type>:ImplicitToken ::= 
